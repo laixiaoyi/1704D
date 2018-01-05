@@ -1,0 +1,31 @@
+<div ng-controller="register" class="register">
+    <form name="myForm">
+        <div>
+            <input ng-change="imgVerifyCode()" my-input name="myTel" ng-model="loginTel" type="tel" placeholder="手机号" required minlength="11" maxlength="11" ng-pattern="/^[1][34578]/">
+            <i class="line"></i>
+            <p class="allDel" ng-click="all()">X</p>
+        </div>
+        <div class="tu">
+            <input my-input ng-model="iptTu"  type="text" placeholder="图形码">
+            <i class="line"></i>
+            <img ng-show="imgCode!=''" ng-src="{{imgCode}}" ng-click="reImgCode()" >
+        </div>
+        <div>
+            <input my-input ng-model="dxYzm"  type="text" placeholder="验证码">
+            <i class="line"></i>
+            <button class="verifyCode"  ng-click="getCode()">获取验证码</button>
+        </div>
+        <div>
+            <input my-input name="myPass" ng-model="loginPass" type="password"  placeholder="密码" minlength="6" maxlength="18" ng-pattern="/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,18}$/">
+            <i class="line"></i>
+        </div>
+        <p ng-show="myForm.myTel.$error.minlength||myForm.myTel.$error.pattern">请输入正确的手机号码</p>
+        <p ng-show="myForm.myPass.$error.pattern">请输入6-18位数字字母组合密码</p>
+        <p ng-show="oYzm">验证码错误</p>
+    </form>
+    <div class="div">点击"注册"按钮，即表示您同意<a href="javascript:;">《面包云注册服务协议》</a></div>
+    <input id="myIpt" ng-click="oRegister()"  type="button" value="注册">
+    <p>
+        <a ui-sref="login">已有账号</a>
+    </p>
+</div>

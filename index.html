@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>laixiaoyi</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="./css/app.min.css"/>
+</head>
+
+<body>
+<a class="log" href="javascript:;"></a>
+<div ui-view></div>
+</body>
+<script>
+    document.querySelector('html').style.fontSize = (document.body.clientWidth / 375 * 100 + 'px');
+    window.addEventListener('resize', function () {
+        window.location.reload();
+    });
+</script>
+<script src="./js/lib-bundle.min.js"></script>
+<script src="./js/app.min.js"></script>
+</html>

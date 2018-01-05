@@ -1,0 +1,1 @@
+var center = angular.module('center',[]);

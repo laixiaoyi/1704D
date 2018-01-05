@@ -1,0 +1,22 @@
+<div ng-controller="login" class="login">
+    <form name="myForm">
+        <div>
+            <input my-input type="text" placeholder="手机号" ng-model="loginTel" name="myTel" required minlength="11" maxlength="11" ng-pattern="/^[1][34578]/"/>
+            <i class="line"></i>
+        </div>
+        <div>
+            <input my-input ng-model="loginPass" type="password" placeholder="密码">
+            <i class="line"></i>
+        </div>
+        <p ng-show="myForm.myTel.$error.minlength||myForm.myTel.$error.pattern">请输入正确的手机号码</p>
+        <p class="myP" ng-show="p"></p>
+    </form>
+    <div class="wjmm">
+        <a ui-sref="findPassword">忘记密码？</a>
+    </div>
+    <input ng-click="myLogin()" type="button" value="登录">
+    <p>
+        <span>还没有账号？</span>
+        <a ui-sref="register">注册</a>
+    </p>
+</div>
